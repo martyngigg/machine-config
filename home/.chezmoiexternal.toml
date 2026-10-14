@@ -1,0 +1,13 @@
+{{- $skills := dict
+  "grill-me" "productivity"
+  "grilling" "productivity"
+  "domain-modeling" "engineering" -}}
+{{- range $name, $category := $skills }}
+[".agents/skills/{{ $name }}"]
+    type = "archive"
+    url = "https://github.com/mattpocock/skills/archive/refs/heads/main.tar.gz"
+    exact = true
+    stripComponents = 4
+    include = ["*/skills/{{ $category }}/{{ $name }}/**"]
+    refreshPeriod = "168h"
+{{ end -}}

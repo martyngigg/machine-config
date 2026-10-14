@@ -1,0 +1,10 @@
+#!/bin/bash
+# Install packages from the Brewfile. Reruns whenever the Brewfile changes.
+# Brewfile hash: {{ include "dot_Brewfile" | sha256sum }}
+set -euo pipefail
+
+for brew in /opt/homebrew/bin/brew /usr/local/bin/brew /home/linuxbrew/.linuxbrew/bin/brew; do
+  [ -x "$brew" ] && eval "$("$brew" shellenv)" && break
+done
+
+brew bundle --file={{ joinPath .chezmoi.sourceDir "dot_Brewfile" | quote }}

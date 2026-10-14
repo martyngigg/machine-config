@@ -1,0 +1,17 @@
+#!/bin/bash
+# Install the system packages Homebrew needs, then Homebrew itself
+set -euo pipefail
+
+{{ if eq .chezmoi.os "linux" -}}
+sudo apt-get update
+sudo apt-get install -y build-essential procps curl file git
+{{- end }}
+
+for brew in /opt/homebrew/bin/brew /usr/local/bin/brew /home/linuxbrew/.linuxbrew/bin/brew; do
+  if [ -x "$brew" ]; then
+    echo "Homebrew already installed at $brew"
+    exit 0
+  fi
+done
+
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"

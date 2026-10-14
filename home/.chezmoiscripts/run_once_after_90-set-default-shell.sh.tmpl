@@ -1,0 +1,19 @@
+#!/bin/bash
+# Make Homebrew's fish the login shell
+set -euo pipefail
+
+for brew in /opt/homebrew/bin/brew /usr/local/bin/brew /home/linuxbrew/.linuxbrew/bin/brew; do
+  [ -x "$brew" ] && eval "$("$brew" shellenv)" && break
+done
+
+fish_path="$(brew --prefix)/bin/fish"
+
+if ! grep -qxF "$fish_path" /etc/shells; then
+  echo "Adding $fish_path to /etc/shells"
+  echo "$fish_path" | sudo tee -a /etc/shells > /dev/null
+fi
+
+if [ "${SHELL:-}" != "$fish_path" ]; then
+  echo "Setting default shell to $fish_path"
+  chsh -s "$fish_path"
+fi

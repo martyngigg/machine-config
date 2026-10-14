@@ -1,0 +1,19 @@
+brew "bat"
+brew "fish"
+brew "git"
+brew "htop"
+brew "jq"
+brew "lima"
+brew "mkcert"
+brew "nvm"
+brew "parquet-cli"
+brew "pwgen"
+brew "ripgrep"
+brew "uv"
+brew "watch"
+brew "yq"
+
+if OS.mac?
+  cask "visual-studio-code"
+  cask "zed"
+end

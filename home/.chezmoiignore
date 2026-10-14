@@ -1,0 +1,10 @@
+{{ if ne .chezmoi.os "darwin" }}
+Library
+{{ end }}
+{{ if ne .chezmoi.os "linux" }}
+.config/Code
+.pbuilderrc
+.quiltrc-dpkg
+.Xresources
+.xmodmap
+{{ end }}
