@@ -10,7 +10,7 @@ Dotfiles and machine setup for macOS and Ubuntu/Debian, managed with [chezmoi](h
 
 ## Installation
 
-    sh -c "$(curl -fsLS get.chezmoi.io)" -- -b ~/.local/bin init --apply https://github.com/martyngigg/configs.git
+    sh -c "$(curl -fsLS get.chezmoi.io)" -- -b ~/.local/bin init --apply https://github.com/martyngigg/machine-config.git
 
 This clones the repository into `~/.local/share/chezmoi` and then:
 
