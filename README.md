@@ -4,18 +4,27 @@ Dotfiles and machine setup for macOS and Linux, managed with [chezmoi](https://w
 
 ## Prerequisites
 
+- brew: Install from https://brew.sh/
 - curl
-- macOS: Xcode Command Line Tools (`xcode-select --install`), which provide `git`
-- Linux: `sudo` access
+- git
+- sudo access
 
 ## Installation
 
-    sh -c "$(curl -fsLS get.chezmoi.io)" -- -b ~/.local/bin init --apply https://github.com/martyngigg/machine-config.git
+Install `chezmoi`
+
+```bash
+>brew install chezmoi
+```
+
+Apply chezmoi to manage configuration:
+
+```bash
+>chezmoi init --apply https://github.com/martyngigg/machine-config.git
+```
 
 ## Layout
 
-- `home/` - the chezmoi source directory (see [`.chezmoiroot`](.chezmoiroot)). A `dot_` prefix becomes `.` in `$HOME`.
-- `home/.chezmoiscripts/` - setup scripts run by `chezmoi apply`.
-- `home/.chezmoitemplates/` - shared content, e.g. VS Code settings used on both macOS and Linux.
-- `home/.chezmoiexternal.toml` - files downloaded from other repositories.
+- `.chezmoiscripts/` - setup scripts run by `chezmoi apply`.
+- `.chezmoidata/` - shared content, e.g. packages to install.
 - `images/` - wallpapers. Not installed.
