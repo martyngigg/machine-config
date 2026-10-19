@@ -17,6 +17,8 @@ Install `chezmoi`
 >brew install chezmoi
 ```
 
+If on a managed device, activate "Admin by Request".
+
 Apply chezmoi to manage configuration:
 
 ```bash
