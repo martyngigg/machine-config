@@ -1,0 +1,19 @@
+packages:
+  darwin:
+    brews:
+      - "bat"
+      - "fish"
+      - "git"
+      - "htop"
+      - "jq"
+      - "limactl"
+      - "mkcert"
+      - "parquet-cli"
+      - "pwgen"
+      - "nvm"
+      - "ripgrep"
+      - "uv"
+      - "watch"
+      - "yq"
+    casks:
+      - "zed"
