@@ -7,7 +7,6 @@ packages:
       - "htop"
       - "jq"
       - "lima"
-      - "mkcert"
       - "parquet-cli"
       - "pwgen"
       - "nvm"
@@ -16,4 +15,5 @@ packages:
       - "watch"
       - "yq"
     casks:
+      - "ghostty"
       - "zed"
