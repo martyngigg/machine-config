@@ -2,6 +2,7 @@ packages:
   darwin:
     brews:
       - "bat"
+      - "docker"
       - "fish"
       - "git"
       - "htop"
