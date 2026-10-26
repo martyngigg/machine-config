@@ -3,6 +3,8 @@ packages:
     brews:
       - "bat"
       - "docker"
+      - "docker-compose"
+      - "docker-buildx"
       - "fish"
       - "git"
       - "htop"
