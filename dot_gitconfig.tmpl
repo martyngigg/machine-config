@@ -118,8 +118,8 @@
 
     # pull requests
     # Check out a pull request for testing
-    test-pr = "!f() { git fetch $1 pull/$2/merge:pr/$2-merged && git checkout pr/$2-merged; }; f"
-    sync-pr = "!f() { git fetch $1 +pull/$2/merge && git reset --hard FETCH_HEAD; }; f"
+    test-pr = "!f() { git fetch ${2:-origin} pull/$1/merge:pr/$1-merged && git checkout pr/$1-merged; }; f"
+    sync-pr = "!f() { git fetch ${2:-origin} +pull/$1/merge && git checkout pr/$1-merged && git reset --hard FETCH_HEAD; }; f"
     # Remove all branches starting pr/
     prune-pr = ! git branch | grep 'pr/' | xargs git branch -D
 
