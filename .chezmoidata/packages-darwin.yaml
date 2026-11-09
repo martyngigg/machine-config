@@ -14,6 +14,7 @@ packages:
       - "pwgen"
       - "nvm"
       - "ripgrep"
+      - "shellcheck"
       - "uv"
       - "watch"
       - "yq"
